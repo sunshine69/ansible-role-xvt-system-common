@@ -2,3 +2,15 @@
 
 dependencies:
   - { role: dpe.pip }
+
+galaxy_info:
+  author: xvt
+  description: Ubuntu common installer
+  company: "XVT"
+  license: "proprietary"
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+      - all
+  galaxy_tags: []
