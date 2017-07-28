@@ -1,7 +1,7 @@
 ---
 
 dependencies:
-  - { role: dpe.pip }
+  - { role: xvt-pip }
 
 galaxy_info:
   author: xvt
