@@ -1,0 +1,13 @@
+- name: restart sysstat
+  service:
+    name: sysstat
+    state: restarted
+
+- name: reload postfix
+  service:
+    name: postfix
+    state: reloaded
+
+- name: update relay_password DB
+  command: postmap /etc/postfix/relay_password
+  become_user: postfix

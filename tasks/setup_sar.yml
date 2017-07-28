@@ -1,0 +1,11 @@
+---
+- name: configure sysstat
+  copy:
+    src: etc/default/sysstat
+    dest: /etc/default/sysstat
+  notify: restart sysstat
+
+- name: configure sysstat cron
+  cron:
+    name: sysstat
+    job: command -v debian-sa1 > /dev/null && debian-sa1 1 1

@@ -1,0 +1,35 @@
+- name: Install aptitude
+  apt: name=aptitude state=installed update_cache=yes cache_valid_time=0
+
+- name: Upgrade Ubuntu
+  apt: update_cache=yes upgrade=yes
+
+- name: Set timezone to Australia/Sydney
+  timezone: name={{ ubuntu_timezone }}
+
+- name: Install common packages
+  apt:
+    name: '{{item}}'
+    state: installed
+  with_items: "{{ default_packages }}"
+
+- name: Ensure ntpd is running
+  service:
+    name: ntp
+    state: started
+    enabled: yes
+
+- name: Ensure boto aws python library is installed
+  pip: name={{item}}
+  with_items: "{{ default_python_packages }}"
+
+- name: Install aws_template.py
+  copy:
+    src: files/aws_template.py
+    dest: /usr/local/bin/aws_template.py
+    owner: root
+    group: root
+    mode: 0755
+
+- include: setup_sar.yml
+- include: postfix.yml

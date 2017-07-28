@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+myhostname = {{ ansible_fqdn }}
+myorigin = $mydomain
+mydestination =
+mailbox_size_limit = 0
+inet_interfaces = loopback-only
+inet_protocols = all
+relayhost = [{{ smtp_hostname }}]:25
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/relay_password
+smtp_sasl_security_options = noanonymous
+smtp_use_tls = yes
+smtp_tls_security_level = encrypt
+smtp_tls_note_starttls_offer = yes
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
