@@ -1,6 +1,7 @@
 ubuntu_timezone: "Australia/Sydney"
 ubuntu_ntp_server: pool.ntp.org
 default_packages:
+  - tzdata
   - htop
   - python-pip
   - git

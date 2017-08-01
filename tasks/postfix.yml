@@ -13,6 +13,17 @@
     owner: postfix
     group: postfix
   notify: update relay_password DB
+  when: smtp_username is defined and smtp_password is defined
+
+- name: install empty relay password file
+  file:
+    state: touch
+    dest: /etc/postfix/relay_password
+    mode: 0600
+    owner: postfix
+    group: postfix
+  notify: update relay_password DB
+  when: smtp_username is not defined or smtp_password is not defined
 
 - name: install main.cf
   template:
