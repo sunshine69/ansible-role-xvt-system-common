@@ -39,4 +39,3 @@
     mode: 0755
 
 - include: setup_sar.yml
-- include: postfix.yml
