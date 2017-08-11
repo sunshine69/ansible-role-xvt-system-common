@@ -30,12 +30,4 @@
     name: "{{item}}"
   with_items: "{{ default_python_packages }}"
 
-- name: Install aws_template.py
-  copy:
-    src: files/aws_template.py
-    dest: /usr/local/bin/aws_template.py
-    owner: root
-    group: root
-    mode: 0755
-
 - include: setup_sar.yml
