@@ -1,6 +1,7 @@
 ubuntu_timezone: "Australia/Sydney"
 ubuntu_ntp_server: pool.ntp.org
 default_packages:
+  - tzdata
   - htop
   - python-pip
   - git
@@ -9,13 +10,13 @@ default_packages:
   - unzip
   - sysstat
   - ntp
-  - awscli
   - cloud-utils
   - postfix
   - libffi-dev
   - libssl-dev
 
 default_python_packages:
+  - awscli
   - boto
   - boto3
   - credstash
