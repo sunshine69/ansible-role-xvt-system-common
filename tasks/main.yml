@@ -31,3 +31,11 @@
   with_items: "{{ default_python_packages }}"
 
 - include: setup_sar.yml
+
+- name: add /etc/profile.d file to timestamp bash history
+  template:
+    src: etc/profile.d/bash_history_timestamp.sh
+    dest: /etc/profile.d/bash_history_timestamp.sh
+    mode: 0644
+    owner: root
+    group: root
