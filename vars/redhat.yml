@@ -1,0 +1,20 @@
+system_common_timezone: "Australia/Sydney"
+system_common_ntp_server: pool.ntp.org
+system_common_packages:
+  - htop
+  - git
+  - vim
+  - tmux
+  - unzip
+  - sysstat
+  - ntp
+  - cloud-utils
+  - openssl-devel
+
+system_common_python_packages:
+  - awscli
+  - boto
+  - boto3
+  - credstash
+
+system_common_ntp_service: ntpd

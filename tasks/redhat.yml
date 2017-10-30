@@ -1,0 +1,10 @@
+- name: Upgrade OS
+  yum:
+    name: "*"
+    state: latest
+
+- name: Install common packages
+  yum:
+    name: "{{item}}"
+    state: installed
+  with_items: "{{ system_common_packages }}"

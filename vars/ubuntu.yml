@@ -1,6 +1,6 @@
-ubuntu_timezone: "Australia/Sydney"
-ubuntu_ntp_server: pool.ntp.org
-default_packages:
+system_common_timezone: "Australia/Sydney"
+system_common_ntp_server: pool.ntp.org
+system_common_packages:
   - tzdata
   - htop
   - python-pip
@@ -15,8 +15,10 @@ default_packages:
   - libffi-dev
   - libssl-dev
 
-default_python_packages:
+system_common_python_packages:
   - awscli
   - boto
   - boto3
   - credstash
+
+system_common_ntp_service: ntp
