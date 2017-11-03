@@ -1,16 +1,18 @@
 ---
 
-dependencies:
-  - { role: xvt-pip }
+dependencies: []
 
 galaxy_info:
   author: xvt
-  description: Ubuntu common installer
+  description: System common installer
   company: "XVT"
   license: "proprietary"
   min_ansible_version: 2.0
   platforms:
     - name: Ubuntu
+      versions:
+      - all
+    - name: RedHat
       versions:
       - all
   galaxy_tags: []

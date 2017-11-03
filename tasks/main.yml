@@ -1,34 +1,21 @@
-- name: Install aptitude
-  apt:
-    name: aptitude
-    state: installed
+- include_vars: "{{ ansible_os_family|lower }}.yml"
 
-- name: Upgrade Ubuntu
-  apt:
-    update_cache: yes
-    upgrade: yes
-    cache_valid_time: 1200
+- include_tasks: "{{ ansible_os_family|lower }}.yml"
 
-- name: Install common packages
-  apt:
-    name: "{{item}}"
-    state: installed
-  with_items: "{{ default_packages }}"
-
-- name: Set timezone to Australia/Sydney
+- name: Set timezone to {{ system_common_timezone }}
   timezone:
-    name: "{{ ubuntu_timezone }}"
+    name: "{{ system_common_timezone }}"
 
 - name: Ensure ntpd is running
   service:
-    name: ntp
+    name: "{{ system_common_ntp_service }}"
     state: started
     enabled: yes
 
 - name: Ensure boto aws python library is installed
   pip:
     name: "{{item}}"
-  with_items: "{{ default_python_packages }}"
+  with_items: "{{ system_common_python_packages }}"
 
 - include: setup_sar.yml
 

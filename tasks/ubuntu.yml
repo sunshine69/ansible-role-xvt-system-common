@@ -1,0 +1,16 @@
+- name: Install aptitude
+  apt:
+    name: aptitude
+    state: installed
+
+- name: Upgrade Ubuntu
+  apt:
+    update_cache: yes
+    upgrade: yes
+    cache_valid_time: 1200
+
+- name: Install common packages
+  apt:
+    name: "{{item}}"
+    state: installed
+  with_items: "{{ system_common_packages }}"
