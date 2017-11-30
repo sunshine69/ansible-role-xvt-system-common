@@ -6,7 +6,12 @@
   timezone:
     name: "{{ system_common_timezone }}"
 
-- name: Ensure ntpd is running
+- name: Deploy time server config file
+  copy:
+    src: chrony.conf
+    dest: "{{ system_common_ntp_config_path }}"
+
+- name: Ensure time server is running
   service:
     name: "{{ system_common_ntp_service }}"
     state: started
