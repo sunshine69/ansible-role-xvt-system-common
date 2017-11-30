@@ -17,8 +17,7 @@
 # fails they will be discarded.  Thus under some circumstances it is
 # better to use IP numbers than host names.
 
-# AWS time keeper server
-pool 169.254.169.123 offline iburst
+pool {{ system_common_ntp_server|default('au.pool.ntp.org') }} offline iburst
 # Fall back just in case
 pool 2.debian.pool.ntp.org offline iburst
 
