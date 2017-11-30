@@ -1,5 +1,4 @@
 system_common_timezone: "Australia/Sydney"
-system_common_ntp_server: pool.ntp.org
 system_common_packages:
   - htop
   - git
@@ -7,7 +6,7 @@ system_common_packages:
   - tmux
   - unzip
   - sysstat
-  - ntp
+  - chrony
   - cloud-utils
   - openssl-devel
 
@@ -17,4 +16,6 @@ system_common_python_packages:
   - boto3
   - credstash
 
-system_common_ntp_service: ntpd
+system_common_ntp_service: chronyd
+# This is fedora config path. Assume the same for all redhat family.
+system_common_ntp_config_path: /etc/chrony.conf
