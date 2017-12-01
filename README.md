@@ -1,5 +1,7 @@
-Role Name
-=========
+xvt-system-common
+
+Description
+------------
 
 This is the base common system related setup for all systems in use in XVT.
 
@@ -24,6 +26,7 @@ Dependencies
 ------------
 
 None
+
 Example Playbook
 ----------------
 
@@ -42,3 +45,4 @@ BSD
 Author Information
 ------------------
 
+XVT DevOps
