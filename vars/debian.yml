@@ -1,5 +1,4 @@
 system_common_timezone: "Australia/Sydney"
-system_common_ntp_server: pool.ntp.org
 system_common_packages:
   - tzdata
   - htop
@@ -9,7 +8,7 @@ system_common_packages:
   - tmux
   - unzip
   - sysstat
-  - ntp
+  - chrony
   - cloud-utils
   - postfix
   - libffi-dev
@@ -21,4 +20,5 @@ system_common_python_packages:
   - boto3
   - credstash
 
-system_common_ntp_service: ntp
+system_common_ntp_service: chrony
+system_common_ntp_config_path: /etc/chrony/chrony.conf
