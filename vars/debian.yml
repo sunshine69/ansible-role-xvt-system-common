@@ -10,7 +10,6 @@ system_common_packages:
   - sysstat
   - chrony
   - cloud-utils
-  - postfix
   - libffi-dev
   - libssl-dev
 
