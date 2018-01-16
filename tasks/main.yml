@@ -31,3 +31,25 @@
     mode: 0644
     owner: root
     group: root
+
+# uid and gid should start from 1001 to maintain consistent across the board
+- name: Create system group defined in system_groups dict
+  group:
+    name: "{{ item.name }}"
+    gid: "{{ item.gid }}"
+    state: present
+  with_items: "{{ app_groups }}"
+  when: app_groups is defined and app_groups
+
+- name: Create system users defined in system_users dict
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid|default(omit) }}"
+    group: "{{ item.group }}"
+    groups: "{{ item.groups|default(omit) }}"
+    password: "{{ item.password|default(omit) }}"
+    shell: "{{ item.shell|default(omit) }}"
+    comment: "{{ item.comment|default(omit) }}"
+    generate_ssh_key: "{{ item.generate_ssh_key|default(false) }}"
+  with_items: "{{ app_users }}"
+  when: app_users is defined and app_users
