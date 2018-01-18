@@ -12,6 +12,7 @@ system_common_packages:
   - cloud-utils
   - libffi-dev
   - libssl-dev
+  - nfs-common
 
 system_common_python_packages:
   - awscli
