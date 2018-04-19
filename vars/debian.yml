@@ -13,6 +13,7 @@ system_common_packages:
   - libffi-dev
   - libssl-dev
   - nfs-common
+  - postfix
 
 system_common_python_packages:
   - awscli
