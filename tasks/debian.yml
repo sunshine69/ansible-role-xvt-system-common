@@ -1,7 +1,7 @@
 - name: Install aptitude
   apt:
     name: aptitude
-    state: installed
+    state: present
 
 - name: Upgrade Ubuntu
   apt:
