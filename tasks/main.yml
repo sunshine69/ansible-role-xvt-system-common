@@ -19,8 +19,7 @@
 
 - name: Ensure boto aws python library is installed
   pip:
-    name: "{{item}}"
-  with_items: "{{ system_common_python_packages }}"
+    name: "{{ system_common_python_packages }}"
 
 - include: setup_sar.yml
 
