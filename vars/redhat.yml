@@ -9,6 +9,7 @@ system_common_packages:
   - chrony
   - cloud-utils
   - openssl-devel
+  - amazon-efs-utils
 
 system_common_python_packages:
   - awscli
