@@ -2,7 +2,7 @@ system_common_timezone: "Australia/Sydney"
 system_common_packages:
   - tzdata
   - htop
-  - python-pip
+  - python3-pip
   - git
   - vim
   - tmux
