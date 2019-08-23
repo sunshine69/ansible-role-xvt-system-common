@@ -10,6 +10,5 @@
 
 - name: Install common packages
   yum:
-    name: "{{item}}"
+    name: "{{ system_common_packages }}"
     state: installed
-  with_items: "{{ system_common_packages }}"
